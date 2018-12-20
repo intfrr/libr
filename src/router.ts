@@ -15,6 +15,16 @@ export default new Router({
       component: Feed,
     },
     {
+      path: '/notifications',
+      name: 'notifications',
+      component : Me
+    },
+    {
+      path: '/mail',
+      name: 'mail',
+      component : Me
+    },
+    {
       path: '/me',
       name: 'me',
       component : Me

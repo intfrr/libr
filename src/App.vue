@@ -11,16 +11,24 @@
     </v-content>
     <v-footer app>
       <v-flex sm4>
-        <v-icon>home</v-icon>
+        <v-btn flat icon to="/">
+          <v-icon>home</v-icon>
+        </v-btn>
       </v-flex>
       <v-flex sm4>
-        <v-icon>settings_remote</v-icon>
+        <v-btn flat icon to="/notifications">
+          <v-icon>settings_remote</v-icon>
+        </v-btn>
       </v-flex>
       <v-flex sm4>
-        <v-icon>mail</v-icon>
+        <v-btn flat icon to="/mail">
+          <v-icon>mail</v-icon>
+        </v-btn>
       </v-flex>
       <v-flex sm4>
-        <v-icon>person</v-icon>
+        <v-btn flat icon to="/me">
+          <v-icon>person</v-icon>
+        </v-btn>
       </v-flex>
     </v-footer>
   </v-app>
