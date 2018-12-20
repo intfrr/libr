@@ -1,8 +1,9 @@
 <template>
   <v-app>
-    <v-toolbar app>
-      <v-toolbar-title class="headline text-uppercase">
-        <span>Libre</span>
+    <link href="https://fonts.googleapis.com/css?family=Aleo" rel="stylesheet">
+    <v-toolbar app color="primary">
+      <v-toolbar-title class="headline">
+        <span class="libre-logo">Libre</span>
       </v-toolbar-title>
       <v-spacer></v-spacer>
     </v-toolbar>
@@ -35,6 +36,11 @@
 </template>
 
 <style lang="scss">
+  .libre-logo {
+    font-family: Aleo, serif;
+    color: white;
+  }
+
   .v-footer {
     border-top-style: solid;
     border-top-width: 1px;
