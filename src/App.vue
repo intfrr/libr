@@ -8,7 +8,9 @@
       <v-spacer></v-spacer>
     </v-toolbar>
     <v-content>
+      <!-- Main Content -->
       <router-view></router-view>
+      <!-- /Main Content -->
     </v-content>
     <v-footer app>
       <v-flex sm4>
@@ -36,33 +38,34 @@
 </template>
 
 <style lang="scss">
-  .libre-logo {
-    font-family: Aleo, serif;
-    color: white;
-  }
+.libre-logo {
+  font-family: Aleo, serif;
+  color: white;
+}
 
-  .v-footer {
-    border-top-style: solid;
-    border-top-width: 1px;
-    border-top-color: rgb(102, 153, 153);
-    text-align: center;
-  }
+.v-footer {
+  border-top-style: solid;
+  border-top-width: 1px;
+  border-top-color: rgb(102, 153, 153);
+  text-align: center;
+}
 </style>
 
 
 <script>
-import HelloWorld from './components/HelloWorld'
-
+import HelloWorld from "./components/HelloWorld";
+import Post from "./components/Post";
 
 export default {
-  name: 'App',
+  name: "App",
   components: {
-    HelloWorld
+    HelloWorld,
+    Post
   },
-  data () {
+  data() {
     return {
       //
-    }
+    };
   }
-}
+};
 </script>

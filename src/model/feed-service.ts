@@ -5,17 +5,17 @@ const FeedService = {
             {
                 type: "IMAGE",
                 src: "https://i.giphy.com/media/Ov5NiLVXT8JEc/giphy.gif",
-                tags: "star wars,cats,fighting,battle,lightsaber"
+                tags: "#star wars #cats #fighting #battle #lightsaber"
             },
             {
                 type: "IMAGE",
                 src: "https://i.giphy.com/media/Ov5NiLVXT8JEc/giphy.gif",
-                tags: "star wars,cats,fighting,battle,lightsaber"
+                tags: "#star wars #cats #fighting #battle #lightsaber"
             },
             {
                 type: "IMAGE",
                 src: "https://i.giphy.com/media/Ov5NiLVXT8JEc/giphy.gif",
-                tags: "star wars,cats,fighting,battle,lightsaber"
+                tags: "#star wars #cats #fighting #battle #lightsaber"
             }
         ];
     }
