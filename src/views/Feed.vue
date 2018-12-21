@@ -2,11 +2,13 @@
     <v-layout>
         <v-flex xs12>
             <Post
-                avatar="/img/supercatgifs.png"
-                username="supercatgifs"
-                title="Lightsaber cats!"
-                src="https://i.giphy.com/media/Ov5NiLVXT8JEc/giphy.gif"
-                tags="star wars,cats,fighting,battle,lightsaber">
+                v-for="(post,index) in feed"
+                v-bind:avatar="post.avatar"
+                v-bind:username="post.username"
+                v-bind:title="post.title"
+                v-bind:src="post.src"
+                v-bind:tags="post.tags"
+                v-bind:key="index">
             </Post>
         </v-flex>
     </v-layout>

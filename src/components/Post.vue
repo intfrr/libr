@@ -16,7 +16,7 @@
         <v-card-title>
           <div>
             <h3 class="headline mb-0">{{title}}</h3>
-             <span class="tag">{{tags}}</span>
+            <span class="tags">{{tags}}</span>
           </div>
         </v-card-title>
 
@@ -44,6 +44,10 @@
     width: 25px;
     height: 25px;
     vertical-align: middle;
+  }
+
+  .tags {
+    color: gray;
   }
 </style>
 
