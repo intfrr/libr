@@ -2,6 +2,7 @@ import Vue from 'vue';
 import Router from 'vue-router';
 import Feed from './views/Feed.vue';
 import Me from './views/Me.vue';
+import Mail from './views/Mail.vue';
 
 Vue.use(Router);
 
@@ -22,7 +23,7 @@ export default new Router({
     {
       path: '/mail',
       name: 'mail',
-      component : Me
+      component : Mail
     },
     {
       path: '/me',
