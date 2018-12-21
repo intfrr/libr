@@ -1,4 +1,5 @@
 const MailService = {
+    // @todo: Plug this into a real backend
     getMessages() {
         return [
             { header: "Today" },
