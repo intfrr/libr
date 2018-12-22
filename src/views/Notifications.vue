@@ -23,13 +23,13 @@
             :key="item.title"
             avatar
           >
-            <v-list-tile-action>
+            <v-list-tile-action class="action">
               <v-icon color="pink">{{item.icon}}</v-icon>
             </v-list-tile-action>
 
             <v-list-tile-content>
               <v-list-tile-title v-text="item.title"></v-list-tile-title>
-              {{item.text}}
+              <span class="action-description">{{item.text}}</span>
             </v-list-tile-content>
 
             <v-list-tile-avatar>
@@ -41,6 +41,12 @@
     </v-flex>
   </v-layout>
 </template>
+
+<style lang="scss">
+    .action-description {
+        font-size: 10pt;
+    }
+</style>
 
 <script lang="ts">
 import { Component, Vue } from 'vue-property-decorator';
