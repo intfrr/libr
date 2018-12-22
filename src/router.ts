@@ -3,6 +3,7 @@ import Router from 'vue-router';
 import Feed from './views/Feed.vue';
 import Me from './views/Me.vue';
 import Mail from './views/Mail.vue';
+import Notifications from './views/Notifications.vue';
 
 Vue.use(Router);
 
@@ -18,7 +19,7 @@ export default new Router({
     {
       path: '/notifications',
       name: 'notifications',
-      component : Me
+      component : Notifications
     },
     {
       path: '/mail',
