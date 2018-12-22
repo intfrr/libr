@@ -5,7 +5,7 @@ const NotificationService = {
             {
                 icon: "favorite",
                 title: "Jason Oner",
-                text: 'liked your post, "President Cat',
+                text: 'liked your post, "President Cat"',
                 avatar: "https://cdn.vuetifyjs.com/images/lists/1.jpg"
             },
             {

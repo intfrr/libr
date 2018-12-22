@@ -1,21 +1,6 @@
 <template>
   <v-layout row>
     <v-flex xs12 sm6 offset-sm3>
-        <v-toolbar color="indigo" dark>
-          <v-toolbar-side-icon></v-toolbar-side-icon>
-
-          <v-toolbar-title>Notifications</v-toolbar-title>
-
-          <v-spacer></v-spacer>
-
-          <v-btn icon>
-            <v-icon>search</v-icon>
-          </v-btn>
-
-          <v-btn icon>
-            <v-icon>more_vert</v-icon>
-          </v-btn>
-        </v-toolbar>
         <v-list>
           <v-list-tile
             v-for="item in items"
