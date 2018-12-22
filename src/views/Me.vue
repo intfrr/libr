@@ -4,6 +4,9 @@
         <v-img src="/img/blog-header.png">
         </v-img>
         <v-img class="blog-avatar" src="/img/blog-avatar.png"></v-img>
+        <v-flex class="blog-heading" xs12>
+            <center>ilovecatgifs</center>
+        </v-flex>
         <v-toolbar color="secondary" dark>
             POSTS
         </v-toolbar>
@@ -42,6 +45,10 @@ export default class Me extends Vue {
 
 </script>
 <style lang="scss">
+    .blog-heading {
+        font-size: 18pt;
+    }
+
     .blog-avatar {
         position: relative;
         top: -3%;
