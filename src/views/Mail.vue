@@ -1,7 +1,7 @@
 <template>
   <v-layout row>
     <v-flex xs12 sm6 offset-sm3>
-        <v-toolbar color="cyan" dark>
+        <v-toolbar color="indigo" dark>
           <v-toolbar-side-icon></v-toolbar-side-icon>
 
           <v-toolbar-title>Inbox</v-toolbar-title>
