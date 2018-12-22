@@ -4,8 +4,8 @@
       <v-card>
         <v-card-title primary-title>
             <span>
-                <img class="avatar" :src="avatar"></img><b>{{username}}</b>
-                <v-btn small color="primary">Follow</v-btn>
+                <img class="avatar" :src="avatar"><b>{{username}}</b>
+                <v-btn v-if="canFollow" small color="primary">Follow</v-btn>
             </span>
         </v-card-title>
 
@@ -65,5 +65,6 @@ export default class Post extends Vue {
     @Prop() private title!: string;
     @Prop() private src!: string;
     @Prop() private tags!: string;
+    @Prop() private canFollow!: boolean;
 }
 </script>

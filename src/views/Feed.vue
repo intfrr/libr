@@ -8,6 +8,7 @@
                 v-bind:title="post.title"
                 v-bind:src="post.src"
                 v-bind:tags="post.tags"
+                v-bind:canFollow="post.canFollow"
                 v-bind:key="index">
             </Post>
             <v-card>Thats it....this is just a preview!</v-card>
@@ -31,6 +32,9 @@ export default class Feed extends Vue {
   constructor() {
     super();
     this.feed = FeedService.getFeed();
+    for (var post of this.feed) {
+        console.log("Post", post);
+    }
   }
 }
 </script>
