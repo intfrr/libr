@@ -46,10 +46,19 @@ const FeedService = {
             {
                 avatar: "/img/blog-avatar.png",
                 username: "ilovecatgifs",
-                title: "I can do it!",
+                title: "President Cat",
                 type: "IMAGE",
-                src: "https://i.giphy.com/media/G3773sSDJHHy0/200w.gif",
-                tags: "#cats #funny #stuck",
+                src: "https://media1.giphy.com/media/3oKIP5NkVK7VxCgcdG/giphy.gif?cid=3640f6095c1dc9b5715468326bedd149",
+                tags: "#cats #funny #trump #politics",
+                canFollow: false
+            },
+            {
+                avatar: "/img/blog-avatar.png",
+                username: "ilovecatgifs",
+                title: "Cats and cucumbers",
+                type: "IMAGE",
+                src: "http://i.imgur.com/MljgJNN.gif",
+                tags: "#cats #funny #cucumber",
                 canFollow: false
             }
         ];
