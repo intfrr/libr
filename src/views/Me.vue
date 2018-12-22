@@ -2,12 +2,8 @@
     <v-layout>
       <v-flex xs12>
         <v-img src="/img/blog-header.png">
-            <v-layout>
-                <span>
-                    <v-img class="blog-avatar" src="/img/blog-avatar.png"></v-img>
-                </span>
-            </v-layout>
         </v-img>
+        <v-img class="blog-avatar" src="/img/blog-avatar.png"></v-img>
         <v-toolbar color="secondary" dark>
             POSTS
         </v-toolbar>
@@ -48,9 +44,12 @@ export default class Me extends Vue {
 <style lang="scss">
     .blog-avatar {
         position: relative;
-        top: 256%;
-        left: 197%;
+        top: -3%;
+        left: 40%;
         width: 80px;
         height: 80px;
+        border-style: solid;
+        border-width: 1px;
+        border-color: black;
     }
 </style>
