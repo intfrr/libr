@@ -3,7 +3,7 @@
     <link href="https://fonts.googleapis.com/css?family=Aleo" rel="stylesheet">
     <v-toolbar app color="primary">
       <v-toolbar-title class="headline">
-        <span class="libre-logo">Libre</span>
+        <span class="Libr-logo">Libr</span>
       </v-toolbar-title>
       <v-spacer></v-spacer>
     </v-toolbar>
@@ -38,7 +38,7 @@
 </template>
 
 <style lang="scss">
-.libre-logo {
+.Libr-logo {
   font-family: Aleo, serif;
   color: white;
 }

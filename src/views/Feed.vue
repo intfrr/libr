@@ -11,7 +11,6 @@
                 v-bind:canFollow="post.canFollow"
                 v-bind:key="index">
             </Post>
-            <v-card>Thats it....this is just a preview!</v-card>
         </v-flex>
     </v-layout>
 </template>
