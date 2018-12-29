@@ -6,7 +6,7 @@
                     <v-card-title><h5>Lets get you set up on Libr 😃</h5></v-card-title>
 
                     <v-alert v-if="errorMessage"
-                             v-bind:value="success"
+                             v-bind:value="errorMessage"
                              color="error"
                              icon="warning">
                         {{errorMessage}}
@@ -30,11 +30,32 @@
                                 :append-icon="showPassword ? 'visibility_off' : 'visibility'"
                                 :type="showPassword ? 'text' : 'password'"
                                 name="input-10-1"
-                                label="Normal with hint text"
+                                label="Password"
                                 hint="We recommend at least 8 characters"
                                 counter
                                 @click:append="showPassword = !showPassword">
                             </v-text-field>
+                            <v-combobox
+                                v-model="gender"
+                                :items="genders"
+                                label="Gender">
+                            </v-combobox>
+                            Date of birth
+                            <v-combobox
+                                v-model="dobDay"
+                                :items="days"
+                                label="Day">
+                            </v-combobox>
+                            <v-combobox
+                                v-model="dobMonth"
+                                :items="months"
+                                label="Month">
+                            </v-combobox>
+                            <v-combobox
+                                v-model="dobYear"
+                                :items="years"
+                                label="Year">
+                            </v-combobox>
                         </v-card-text>
                         <v-card-actions>
                             <v-btn
@@ -64,6 +85,7 @@ import Vue from "vue";
 import Component from "vue-class-component";
 import User from '@/model/user';
 import AccountService from '@/model/account-service';
+import router from '@/router';
 
 declare var componentHandler : any;
 declare var v : any;
@@ -76,11 +98,31 @@ export default class Signup extends Vue {
 
     private password = '';
 
+    private gender = 'Other'
+
+    private dobDay = 1;
+
+    private dobMonth = 1;
+
+    private dobYear = 2018;
+
     private success = false;
 
     private errorMessage : string = '';
 
     private showPassword = false;
+
+    private genders = [
+        'Male',
+        'Female',
+        'Other'
+    ];
+
+    private days : Array<number> = [];
+
+    private months : Array<number> = [];
+
+    private years : Array<number> = [];
 
     private emailRules : Array<any> = [
         (v : string) => !!v || 'E-mail is required',
@@ -92,11 +134,31 @@ export default class Signup extends Vue {
         user.setUsername(this.username);
         user.setEmail(this.email);
         user.setPassword(this.password);
+        user.setGender(this.gender);
+        user.setDob(this.dobYear + '-' + this.dobMonth + '-' + this.dobDay);
 
         try {
             await AccountService.signUp(user);
+            router.push('/me');
         } catch(error) {
             this.errorMessage = 'Oops, something went wrong! Please try again later'
+        }
+    }
+
+    private mounted() {
+        let now = new Date();
+        let currentYear = now.getFullYear();
+
+        for(var i=1; i <= 31; i++) {
+            this.days.push(i);
+        }
+
+        for(var i=1; i <= 12; i++) {
+            this.months.push(i);
+        }
+
+        for(var i=currentYear; i >= 1900; i--) {
+            this.years.push(i);
         }
     }
 
