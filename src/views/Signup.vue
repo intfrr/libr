@@ -7,7 +7,7 @@
 
                     <v-alert v-if="errorMessage"
                              v-bind:value="errorMessage"
-                             color="error"
+                             color="warning"
                              icon="warning">
                         {{errorMessage}}
                     </v-alert>
@@ -185,7 +185,7 @@ export default class Signup extends Vue {
             await AccountService.signUp(user);
             router.push('/me');
         } catch(error) {
-            this.errorMessage = 'Oops, something went wrong! Please try again later'
+            this.errorMessage = error.message;
         }
     }
 
