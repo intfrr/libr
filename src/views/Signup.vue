@@ -7,8 +7,8 @@
 
                     <v-alert v-if="errorMessage"
                              v-bind:value="errorMessage"
-                             color="warning"
-                             icon="warning">
+                             color="secondary"
+                             icon="info">
                         {{errorMessage}}
                     </v-alert>
 
@@ -35,6 +35,7 @@
                                 counter
                                 @click:append="showPassword = !showPassword">
                             </v-text-field>
+                            <v-checkbox :label="`Will your blog be NSFW?: ${nsfw ? 'yes' : 'no'}`" v-model="nsfw"></v-checkbox>
                             Date of birth
                             <v-combobox
                                 v-model="dobDay"
@@ -129,6 +130,8 @@ export default class Signup extends Vue {
 
     private dobYear = 2018;
 
+    private nsfw = false;
+
     private displayAge = true;
 
     private success = false;
@@ -188,6 +191,7 @@ export default class Signup extends Vue {
         user.setRelationshipStatus(this.relationshipStatus);
         user.setDob(this.dobYear + '-' + this.dobMonth + '-' + this.dobDay);
         user.setDisplayAge(this.displayAge);
+        user.setNsfw(this.nsfw);
 
         try {
             await AccountService.signUp(user);

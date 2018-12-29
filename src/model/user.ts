@@ -9,7 +9,7 @@ export default class User {
 
     private displayAge : boolean;
 
-    private age : number;
+    private nsfw : boolean;
 
     private gender : string;
 
@@ -39,6 +39,10 @@ export default class User {
 
     public getDisplayAge() : boolean {
         return this.displayAge;
+    }
+
+    public getNsfw() : boolean {
+        return this.nsfw;
     }
 
     public getGender() : string {
@@ -75,6 +79,10 @@ export default class User {
 
     public setDisplayAge(displayAge : boolean) {
         this.displayAge = displayAge;
+    }
+
+    public setNsfw(nsfw : boolean) {
+        this.nsfw = nsfw;
     }
 
     public setGender(gender : string) {
