@@ -16,7 +16,7 @@
                         <v-card-text>
                             <v-text-field
                                 v-model="username"
-                                label="Name"
+                                label="Your new username"
                                 required>
                             </v-text-field>
                             <v-text-field
@@ -35,10 +35,26 @@
                                 counter
                                 @click:append="showPassword = !showPassword">
                             </v-text-field>
+                            Everything below is optional, but recommended :)
                             <v-combobox
                                 v-model="gender"
                                 :items="genders"
                                 label="Gender">
+                            </v-combobox>
+                            <v-combobox
+                                v-model="sexuality"
+                                :items="sexualities"
+                                label="Sexual Orientation">
+                            </v-combobox>
+                            <v-combobox
+                                v-model="relationshipStyle"
+                                :items="relationshipStyles"
+                                label="Relationship Style">
+                            </v-combobox>
+                            <v-combobox
+                                v-model="relationshipStatus"
+                                :items="relationshipStatuses"
+                                label="Relationship Status">
                             </v-combobox>
                             Date of birth
                             <v-combobox
@@ -98,7 +114,13 @@ export default class Signup extends Vue {
 
     private password = '';
 
-    private gender = 'Other'
+    private gender = '';
+
+    private sexuality = '';
+
+    private relationshipStyle = '';
+
+    private relationshipStatus = '';
 
     private dobDay = 1;
 
@@ -118,6 +140,25 @@ export default class Signup extends Vue {
         'Other'
     ];
 
+    private sexualities = [
+        'Straight',
+        'Bisexual',
+        'Pansexual',
+        'Gay',
+        'Lesbain'
+    ];
+
+    private relationshipStyles = [
+        'Monogamous',
+        'Non monogamous'
+    ];
+
+    private relationshipStatuses = [
+        'Single',
+        'In a relationship',
+        'In non-monogamous relationship/s'
+    ];
+
     private days : Array<number> = [];
 
     private months : Array<number> = [];
@@ -135,6 +176,9 @@ export default class Signup extends Vue {
         user.setEmail(this.email);
         user.setPassword(this.password);
         user.setGender(this.gender);
+        user.setSexuality(this.sexuality);
+        user.setRelationshipStyle(this.relationshipStyle);
+        user.setRelationshipStatus(this.relationshipStatus);
         user.setDob(this.dobYear + '-' + this.dobMonth + '-' + this.dobDay);
 
         try {

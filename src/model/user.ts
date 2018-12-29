@@ -13,6 +13,12 @@ export default class User {
 
     private password : string;
 
+    private sexuality : string;
+
+    private relationshipStyle : string;
+
+    private relationshipStatus : string;
+
     public getUserId() : number {
         return this.userId;
     }
@@ -31,6 +37,18 @@ export default class User {
 
     public getGender() : string {
         return this.gender;
+    }
+
+    public getSexuality() : string {
+        return this.sexuality;
+    }
+
+    public getRelationshipStyle() : string {
+        return this.relationshipStyle;
+    }
+
+    public getRelationshipStatus() : string {
+        return this.relationshipStatus;
     }
 
     public setUserId(userId : number) {
@@ -55,5 +73,17 @@ export default class User {
 
     public setPassword(password : string) {
         this.password = password;
+    }
+
+    public setSexuality(sexuality : string) {
+        this.sexuality = sexuality;
+    }
+
+    public setRelationshipStyle(relationshipStyle: string) {
+        this.relationshipStyle = relationshipStyle;
+    }
+
+    public setRelationshipStatus(relationshipStatus: string) {
+        this.relationshipStatus = relationshipStatus;
     }
 }
