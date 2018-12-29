@@ -52,6 +52,7 @@
                                 label="Year">
                             </v-combobox>
                             Public profile info
+                            <v-checkbox :label="`Display age on profile: ${displayAge ? 'yes' : 'no'}`" v-model="displayAge"></v-checkbox>
                             <v-combobox
                                 v-model="gender"
                                 :items="genders"
@@ -128,6 +129,8 @@ export default class Signup extends Vue {
 
     private dobYear = 2018;
 
+    private displayAge = true;
+
     private success = false;
 
     private errorMessage : string = '';
@@ -184,6 +187,7 @@ export default class Signup extends Vue {
         user.setRelationshipStyle(this.relationshipStyle);
         user.setRelationshipStatus(this.relationshipStatus);
         user.setDob(this.dobYear + '-' + this.dobMonth + '-' + this.dobDay);
+        user.setDisplayAge(this.displayAge);
 
         try {
             await AccountService.signUp(user);

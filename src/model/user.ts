@@ -7,6 +7,8 @@ export default class User {
 
     private dob : string;
 
+    private displayAge : boolean;
+
     private age : number;
 
     private gender : string;
@@ -33,6 +35,10 @@ export default class User {
 
     public getDob() : string {
         return this.dob;
+    }
+
+    public getDisplayAge() : boolean {
+        return this.displayAge;
     }
 
     public getGender() : string {
@@ -65,6 +71,10 @@ export default class User {
 
     public setDob(dob : string) {
         this.dob = dob;
+    }
+
+    public setDisplayAge(displayAge : boolean) {
+        this.displayAge = displayAge;
     }
 
     public setGender(gender : string) {
