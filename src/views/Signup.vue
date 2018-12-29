@@ -14,30 +14,27 @@
 
                     <form ref="form">
                         <v-card-text>
-                            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-                                <label class="mdl-textfield__label" for="username">Username</label>
-                                <input class="signup-text-field mdl-textfield__input"
-                                        type="text"
-                                        id="username"
-                                        v-model="username"
-                                        required>
-                            </div>
-                            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-                                <label class="mdl-textfield__label" for="email">Email</label>
-                                <input class="signup-text-field mdl-textfield__input"
-                                        type="email"
-                                        id="email"
-                                        v-model="email"
-                                        required>
-                            </div>
-                            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-                                <label class="mdl-textfield__label" for="password">Password</label>
-                                <input class="signup-text-field mdl-textfield__input"
-                                        type="password"
-                                        id="password"
-                                        v-model="password"
-                                        required>
-                            </div>
+                            <v-text-field
+                                v-model="username"
+                                label="Name"
+                                required>
+                            </v-text-field>
+                            <v-text-field
+                                v-model="email"
+                                :rules="emailRules"
+                                label="E-mail"
+                                required>
+                            </v-text-field>
+                            <v-text-field
+                                v-model="password"
+                                :append-icon="showPassword ? 'visibility_off' : 'visibility'"
+                                :type="showPassword ? 'text' : 'password'"
+                                name="input-10-1"
+                                label="Normal with hint text"
+                                hint="We recommend at least 8 characters"
+                                counter
+                                @click:append="showPassword = !showPassword">
+                            </v-text-field>
                         </v-card-text>
                         <v-card-actions>
                             <v-btn
@@ -69,6 +66,7 @@ import User from '@/model/user';
 import AccountService from '@/model/account-service';
 
 declare var componentHandler : any;
+declare var v : any;
 
 @Component
 export default class Signup extends Vue {
@@ -81,6 +79,13 @@ export default class Signup extends Vue {
     private success = false;
 
     private errorMessage : string = '';
+
+    private showPassword = false;
+
+    private emailRules : Array<any> = [
+        (v : string) => !!v || 'E-mail is required',
+        (v : string) => /.+@.+/.test(v) || 'E-mail must be valid'
+    ];
 
     private async submit() {
         const user : User = new User();
