@@ -35,7 +35,23 @@
                                 counter
                                 @click:append="showPassword = !showPassword">
                             </v-text-field>
-                            Everything below is optional, but recommended :)
+                            Date of birth
+                            <v-combobox
+                                v-model="dobDay"
+                                :items="days"
+                                label="Day">
+                            </v-combobox>
+                            <v-combobox
+                                v-model="dobMonth"
+                                :items="months"
+                                label="Month">
+                            </v-combobox>
+                            <v-combobox
+                                v-model="dobYear"
+                                :items="years"
+                                label="Year">
+                            </v-combobox>
+                            Public profile info
                             <v-combobox
                                 v-model="gender"
                                 :items="genders"
@@ -55,22 +71,6 @@
                                 v-model="relationshipStatus"
                                 :items="relationshipStatuses"
                                 label="Relationship Status">
-                            </v-combobox>
-                            Date of birth
-                            <v-combobox
-                                v-model="dobDay"
-                                :items="days"
-                                label="Day">
-                            </v-combobox>
-                            <v-combobox
-                                v-model="dobMonth"
-                                :items="months"
-                                label="Month">
-                            </v-combobox>
-                            <v-combobox
-                                v-model="dobYear"
-                                :items="years"
-                                label="Year">
                             </v-combobox>
                         </v-card-text>
                         <v-card-actions>
@@ -137,7 +137,8 @@ export default class Signup extends Vue {
     private genders = [
         'Male',
         'Female',
-        'Other'
+        'Other',
+        'Not specified'
     ];
 
     private sexualities = [
@@ -145,18 +146,21 @@ export default class Signup extends Vue {
         'Bisexual',
         'Pansexual',
         'Gay',
-        'Lesbain'
+        'Lesbain',
+        'Not specified'
     ];
 
     private relationshipStyles = [
         'Monogamous',
-        'Non monogamous'
+        'Non monogamous',
+        'Not specified'
     ];
 
     private relationshipStatuses = [
         'Single',
         'In a relationship',
-        'In non-monogamous relationship/s'
+        'In non-monogamous relationship/s',
+        'Not specified'
     ];
 
     private days : Array<number> = [];
