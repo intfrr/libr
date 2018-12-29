@@ -104,4 +104,11 @@ export default class User {
     public setRelationshipStatus(relationshipStatus: string) {
         this.relationshipStatus = relationshipStatus;
     }
+
+    public setAll(data : any) {
+        for(var key in data) {
+            //@ts-ignore
+            this[key] = data[key];
+        }
+    }
 }
