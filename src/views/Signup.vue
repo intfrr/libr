@@ -35,7 +35,6 @@
                                 counter
                                 @click:append="showPassword = !showPassword">
                             </v-text-field>
-                            <v-checkbox :label="`Will your blog be NSFW?: ${nsfw ? 'yes' : 'no'}`" v-model="nsfw"></v-checkbox>
                             Date of birth
                             <v-combobox
                                 v-model="dobDay"
@@ -52,8 +51,8 @@
                                 :items="years"
                                 label="Year">
                             </v-combobox>
+                            <v-checkbox :label="`Will your blog be NSFW?: ${nsfw ? 'yes' : 'no'}`" v-model="nsfw"></v-checkbox>
                             Public profile info
-                            <v-checkbox :label="`Display age on profile: ${displayAge ? 'yes' : 'no'}`" v-model="displayAge"></v-checkbox>
                             <v-combobox
                                 v-model="gender"
                                 :items="genders"
@@ -74,6 +73,7 @@
                                 :items="relationshipStatuses"
                                 label="Relationship Status">
                             </v-combobox>
+                            <v-checkbox :label="`Display age on profile: ${displayAge ? 'yes' : 'no'}`" v-model="displayAge"></v-checkbox>
                         </v-card-text>
                         <v-card-actions>
                             <v-btn
