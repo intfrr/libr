@@ -5,7 +5,7 @@
         </v-img>
         <v-img class="blog-avatar" src="/img/blog-avatar.png"></v-img>
         <v-flex class="blog-heading" xs12>
-            <center>ilovecatgifs</center>
+            <center>{{user.username}}</center>
         </v-flex>
         <v-toolbar color="secondary" dark>
             POSTS
@@ -28,6 +28,9 @@
 import { Component, Vue } from 'vue-property-decorator';
 import Post from "@/components/Post.vue";
 import FeedService from "@/model/feed-service";
+import User from '@/model/user';
+import store from '@/store';
+import router from '@/router';
 
 @Component({
     components: {
@@ -35,12 +38,20 @@ import FeedService from "@/model/feed-service";
     }
 })
 export default class Me extends Vue {
-  posts: Array<any>;
+    private user: User = store.getters.user;
 
-  constructor() {
-    super();
-    this.posts = FeedService.getOwnPosts();
-  }
+    private posts: Array<any>;
+
+    private mounted() {
+        if (!this.user) {
+            router.push('/login');
+        }
+    }
+
+    constructor() {
+        super();
+        this.posts = FeedService.getOwnPosts();
+    }
 }
 
 </script>
